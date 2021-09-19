@@ -5,6 +5,8 @@ const REVIEW_API_URL = `${ BASE_API_URL }/review`;
 
 (function (exports) {
   $(function () {
+    const app = $('.app');
+    const loader = $('.loader');
     const titleEl = $('.product__title');
     const avgRatingEl = $('.product__avg-rating');
     const productStarsEl = $('.product__stars');
@@ -159,6 +161,8 @@ const REVIEW_API_URL = `${ BASE_API_URL }/review`;
         .then((data) => {
           const { data: product } = data;
           populateProductDetails(product)
+          loader.hide();
+          app.show();
         });
     }
 
