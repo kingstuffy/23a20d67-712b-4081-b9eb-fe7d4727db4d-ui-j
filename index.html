@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product</title>
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="css/base.css" type="text/css" rel="stylesheet" media="all">
+    <link href="css/app.css" type="text/css" rel="stylesheet" media="all">
+</head>
+<body>
+<div class="app">
+    <div class="app__wrapper">
+        <div class="product">
+            <h1 class="product__title text-xxl font-bold">
+                The Minimalist Entrepreneur
+            </h1>
+            <div class="flex items-center justify-between product__details">
+                <div class="flex items-center product__ratings">
+                    <div class="product__avg-rating text-xxl">
+                        3.8
+                    </div>
+                    <div class="stars">
+                        <div class="stars__row stars__off">
+                            <button class="stars__btn" data-rating="1"></button>
+                            <button class="stars__btn" data-rating="2"></button>
+                            <button class="stars__btn" data-rating="3"></button>
+                            <button class="stars__btn" data-rating="4"></button>
+                            <button class="stars__btn" data-rating="5"></button>
+                        </div>
+                        <div class="stars__row stars__on">
+                            <button class="stars__btn" data-rating="1"></button>
+                            <button class="stars__btn" data-rating="2"></button>
+                            <button class="stars__btn" data-rating="3"></button>
+                            <button class="stars__btn" data-rating="4"></button>
+                            <button class="stars__btn" data-rating="5"></button>
+                        </div>
+                    </div>
+                </div>
+                <button class="app-btn">
+                    Add review
+                </button>
+            </div>
+        </div>
+        <div class="divider"></div>
+        <div class="reviews">
+            <h2 class="reviews__title">
+                Reviews
+            </h2>
+            <ul class="reviews__list">
+                <li class="reviews__item flex items-center">
+                    <div class="reviews__stars">
+                        <div class="stars">
+                            <div class="stars__row stars__off">
+                                <button class="stars__btn" data-rating="1"></button>
+                                <button class="stars__btn" data-rating="2"></button>
+                                <button class="stars__btn" data-rating="3"></button>
+                                <button class="stars__btn" data-rating="4"></button>
+                                <button class="stars__btn" data-rating="5"></button>
+                            </div>
+                            <div class="stars__row stars__on">
+                                <button class="stars__btn" data-rating="1"></button>
+                                <button class="stars__btn" data-rating="2"></button>
+                                <button class="stars__btn" data-rating="3"></button>
+                                <button class="stars__btn" data-rating="4"></button>
+                                <button class="stars__btn" data-rating="5"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-center reviews__summary">
+                        <div class="reviews__rating-num">4</div>
+                        ,
+                        <div class="reviews__rating-text">book was full of fluff</div>
+                    </div>
+                </li>
+                <li class="reviews__item flex items-center">
+                    <div class="reviews__stars">
+                        <div class="stars">
+                            <div class="stars__row stars__off">
+                                <button class="stars__btn" data-rating="1"></button>
+                                <button class="stars__btn" data-rating="2"></button>
+                                <button class="stars__btn" data-rating="3"></button>
+                                <button class="stars__btn" data-rating="4"></button>
+                                <button class="stars__btn" data-rating="5"></button>
+                            </div>
+                            <div class="stars__row stars__on">
+                                <button class="stars__btn" data-rating="1"></button>
+                                <button class="stars__btn" data-rating="2"></button>
+                                <button class="stars__btn" data-rating="3"></button>
+                                <button class="stars__btn" data-rating="4"></button>
+                                <button class="stars__btn" data-rating="5"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-center reviews__summary">
+                        <div class="reviews__rating-num">4</div>
+                        ,
+                        <div class="reviews__rating-text">book was full of fluff</div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="modal">
+    <div class="modal__overlay"></div>
+    <div class="modal__content">
+        <form class="form">
+            <button type="button" class="form__close-btn"></button>
+            <div class="form__group">
+                <h1 class="title form__title">
+                    What’s your rating?
+                </h1>
+            </div>
+            <div class="form__group">
+                <label class="form__label">
+                    Rating
+                </label>
+                <div class="form__ratings">
+                    <div class="stars">
+                        <div class="stars__row stars__off">
+                            <button class="stars__btn" data-rating="1"></button>
+                            <button class="stars__btn" data-rating="2"></button>
+                            <button class="stars__btn" data-rating="3"></button>
+                            <button class="stars__btn" data-rating="4"></button>
+                            <button class="stars__btn" data-rating="5"></button>
+                        </div>
+                        <div class="stars__row stars__on">
+                            <button class="stars__btn" data-rating="1"></button>
+                            <button class="stars__btn" data-rating="2"></button>
+                            <button class="stars__btn" data-rating="3"></button>
+                            <button class="stars__btn" data-rating="4"></button>
+                            <button class="stars__btn" data-rating="5"></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="form__error">
+                    Please select a rating
+                </div>
+            </div>
+            <div class="form__group">
+                <label class="form__label" for="text">
+                    Review
+                </label>
+                <textarea id="text" class="form__textarea" placeholder="Start typing..." maxlength="50"></textarea>
+            </div>
+            <button class="app-btn">
+                Submit review
+            </button>
+        </form>
+    </div>
+</div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

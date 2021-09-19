@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <defs>
+        <style>.close{fill:none;}</style>
+    </defs>
+    <g id="Ebene_2" data-name="Ebene 2">
+        <g id="Ebene_1-2" data-name="Ebene 1">
+            <polygon
+                    points="20.25 5.32 18.68 3.75 12 10.37 5.32 3.75 3.75 5.32 10.43 11.92 3.75 18.68 5.32 20.25 12 13.51 18.68 20.25 20.25 18.68 13.57 11.92 20.25 5.32"/>
+            <rect class="close" width="24" height="24"/>
+        </g>
+    </g>
+</svg>

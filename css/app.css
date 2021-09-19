@@ -1,0 +1,141 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-family: 'Roboto', sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+}
+
+
+.product__title {
+    margin-bottom: 45px;
+}
+
+.app {
+    padding: 5% 20px;
+}
+
+.app__wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.product {
+
+}
+
+.product__avg-rating {
+    margin-right: 24px;
+}
+
+.reviews__title {
+    margin-bottom: 29px;
+}
+
+.reviews__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.reviews__item {
+    margin-bottom: 29px;
+}
+
+.reviews__stars {
+    flex-shrink: 0;
+    margin-right: 29px;
+}
+
+.reviews__summary {
+    font-size: 20px;
+    line-height: 23px;
+}
+
+.reviews__rating-num {
+    font-weight: bold;
+}
+
+.reviews__rating-text {
+    color: #797874;
+    margin-left: 5px;
+}
+
+.form {
+    display: block;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 680px;
+    background-color: #fff;
+    padding: 48px;
+    position: relative;
+}
+
+.form__close-btn {
+    appearance: none;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    background-size: contain;
+    background-position: center;
+    background-image: url("../icons/close.svg");
+}
+
+.form__group {
+    margin-bottom: 40px;
+}
+
+.form__label {
+    display: block;
+    font-size: 24px;
+    line-height: 28px;
+    margin-bottom: 40px;
+}
+
+.form__textarea {
+    border: 0;
+    font-size: 20px;
+    line-height: 23px;
+    width: 100%;
+}
+
+.form__textarea:focus-visible {
+    border: 0;
+    outline: none;
+    border-bottom: 1px solid #ddd;
+}
+
+.form__error {
+    margin-top: 20px;
+    color: red;
+    display: none;
+}
+
+@media only screen and (max-width: 768px) {
+    .product__details, .reviews__item {
+        flex-wrap: wrap;
+    }
+
+    .product__ratings, .reviews__stars {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
