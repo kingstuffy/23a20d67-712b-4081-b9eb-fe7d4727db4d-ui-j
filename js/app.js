@@ -1,3 +1,7 @@
+const BASE_API_URL = 'http://localhost:1500';
+const DEFAULT_PRODUCT_API_URL = `${ BASE_API_URL }/product/default`;
+const REVIEW_API_URL = `${ BASE_API_URL }/review`;
+
 (function (exports) {
   $(function () {
     const titleEl = $('.product__title');
@@ -10,6 +14,7 @@
     const reviewsListEl = $('.reviews__list');
 
     const reviewModal = $('.modal');
+    const activeStars = $('.stars--active');
 
     const starsTemplate = $('#stars-template').html();
     const reviewItemTemplate = $('#review-item-template').html();
@@ -55,8 +60,38 @@
       return template;
     }
 
+    function setUpStars() {
+      activeStars.each(function () {
+        const stars = $(this);
+        const starsOnEl = stars.find('.stars__on');
+        const ratingInput = stars.find('.form__rating');
+
+        function updateRating(rating) {
+          const width = Number(rating) / 5 * 100;
+          starsOnEl.css('width', `${ width }%`);
+        }
+
+        let starsValue = 0;
+
+        stars
+          .find('.stars__btn')
+          .hover(function () {
+            updateRating($(this).data('rating'));
+          }, function () {
+            isHovering = false;
+            updateRating(starsValue);
+          })
+          .click(function () {
+            starsValue = $(this).data('rating');
+            updateRating(starsValue);
+            ratingInput.val(starsValue);
+          })
+          .end();
+      });
+    }
+
     function loadDefaultProduct() {
-      fetch('http://localhost:1500/product/default')
+      fetch(DEFAULT_PRODUCT_API_URL)
         .then(response => response.json())
         .then((data) => {
           const { data: product } = data;
@@ -65,6 +100,7 @@
     }
 
     loadDefaultProduct();
+    setUpStars();
   });
 
 

@@ -63,6 +63,10 @@
     flex-shrink: 0;
 }
 
+.stars--active {
+    cursor: pointer;
+}
+
 .stars__row {
     overflow: hidden;
     height: 30px;
@@ -71,14 +75,14 @@
 .stars__off {
     position: relative;
 }
-
 .stars__on {
     position: absolute;
     left: 0;
     top: 0;
     z-index: 1;
-    width: 100%;
+    width: 0;
 }
+
 
 .stars__btn {
     width: 30px;
@@ -90,7 +94,7 @@
     background-color: transparent;
 }
 
-.stars--active {
+.stars--active .stars__btn {
     cursor: pointer;
 }
 
@@ -109,7 +113,6 @@
     top: 0;
     left: 0;
     z-index: 10000;
-    display: none;
 }
 
 .modal__overlay {

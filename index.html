@@ -49,25 +49,26 @@
                 </h1>
             </div>
             <div class="form__group">
-                <label class="form__label">
+                <label class="form__label" for="form__rating">
                     Rating
                 </label>
-                <div class="form__ratings">
+                <div class="form__ratings flex">
                     <div class="stars stars--active">
                         <div class="stars__row stars__off">
-                            <button class="stars__btn" data-rating="1"></button>
-                            <button class="stars__btn" data-rating="2"></button>
-                            <button class="stars__btn" data-rating="3"></button>
-                            <button class="stars__btn" data-rating="4"></button>
-                            <button class="stars__btn" data-rating="5"></button>
+                            <button type="button" class="stars__btn" title="1" data-rating="1"></button>
+                            <button type="button" class="stars__btn" title="2" data-rating="2"></button>
+                            <button type="button" class="stars__btn" title="3" data-rating="3"></button>
+                            <button type="button" class="stars__btn" title="4" data-rating="4"></button>
+                            <button type="button" class="stars__btn" title="5" data-rating="5"></button>
                         </div>
                         <div class="stars__row stars__on">
-                            <button class="stars__btn" data-rating="1"></button>
-                            <button class="stars__btn" data-rating="2"></button>
-                            <button class="stars__btn" data-rating="3"></button>
-                            <button class="stars__btn" data-rating="4"></button>
-                            <button class="stars__btn" data-rating="5"></button>
+                            <button type="button" class="stars__btn" title="1" data-rating="1"></button>
+                            <button type="button" class="stars__btn" title="2" data-rating="2"></button>
+                            <button type="button" class="stars__btn" title="3" data-rating="3"></button>
+                            <button type="button" class="stars__btn" title="4" data-rating="4"></button>
+                            <button type="button" class="stars__btn" title="5" data-rating="5"></button>
                         </div>
+                        <input type="hidden" id="form__rating"/>
                     </div>
                 </div>
                 <div class="form__error">
@@ -75,10 +76,11 @@
                 </div>
             </div>
             <div class="form__group">
-                <label class="form__label" for="text">
+                <label class="form__label" for="form__text">
                     Review
                 </label>
-                <textarea id="text" class="form__textarea" placeholder="Start typing..." maxlength="50"></textarea>
+                <textarea id="form__text" class="form__textarea" placeholder="Start typing..."
+                          maxlength="50"></textarea>
             </div>
             <button class="app-btn">
                 Submit review
