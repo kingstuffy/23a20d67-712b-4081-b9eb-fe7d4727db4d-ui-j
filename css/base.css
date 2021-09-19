@@ -88,6 +88,9 @@
     background-position: center;
     border: 0;
     background-color: transparent;
+}
+
+.stars--active {
     cursor: pointer;
 }
 
