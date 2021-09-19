@@ -74,6 +74,7 @@
 .stars__row {
     overflow: hidden;
     height: 30px;
+    display: flex;
 }
 
 .stars__off {
@@ -97,6 +98,7 @@
     background-position: center;
     border: 0;
     background-color: transparent;
+    flex-shrink: 0;
 }
 
 .stars--active .stars__btn {

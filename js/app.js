@@ -109,7 +109,7 @@ const REVIEW_API_URL = `${ BASE_API_URL }/review`;
       const template = $('<div></div>');
       template.html(starsTemplate);
 
-      const width = Math.round(rating) / 5 * 100;
+      const width = rating / 5 * 100;
       template.find('.stars__on').css('width', `${ width }%`)
       return template;
     }
