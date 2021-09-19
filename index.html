@@ -41,7 +41,7 @@
 <div class="modal">
     <div class="modal__overlay"></div>
     <div class="modal__content">
-        <form class="form">
+        <form class="form" id="form">
             <button type="button" class="form__close-btn"></button>
             <div class="form__group">
                 <h1 class="title form__title">
@@ -68,7 +68,7 @@
                             <button type="button" class="stars__btn" title="4" data-rating="4"></button>
                             <button type="button" class="stars__btn" title="5" data-rating="5"></button>
                         </div>
-                        <input type="hidden" id="form__rating"/>
+                        <input type="hidden" id="form__rating" value="0"/>
                     </div>
                 </div>
                 <div class="form__error">
@@ -82,7 +82,7 @@
                 <textarea id="form__text" class="form__textarea" placeholder="Start typing..."
                           maxlength="50"></textarea>
             </div>
-            <button class="app-btn">
+            <button type="submit" class="app-btn">
                 Submit review
             </button>
         </form>
