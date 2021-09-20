@@ -1,7 +1,5 @@
-const BASE_API_URL = 'http://localhost:1500';
-const DEFAULT_PRODUCT_SLUG = 'default';
-const DEFAULT_PRODUCT_API_URL = `${ BASE_API_URL }/product/${ DEFAULT_PRODUCT_SLUG }`;
-const REVIEW_API_URL = `${ BASE_API_URL }/review`;
+const DEFAULT_PRODUCT_API_URL = `${BASE_API_URL}/product/${DEFAULT_PRODUCT_SLUG}`;
+const REVIEW_API_URL = `${BASE_API_URL}/review`;
 
 (function (exports) {
   $(function () {
@@ -27,12 +25,12 @@ const REVIEW_API_URL = `${ BASE_API_URL }/review`;
     const starsTemplate = $('#stars-template').html();
     const reviewItemTemplate = $('#review-item-template').html();
 
-    openReviewBtn.click(openReviewModal)
-    closeReviewBtn.click(closeReviewModal)
-    form.submit(submitForm)
+    openReviewBtn.click(openReviewModal);
+    closeReviewBtn.click(closeReviewModal);
+    form.submit(submitForm);
 
     function openReviewModal() {
-      reviewModal.show()
+      reviewModal.show();
     }
 
     function closeReviewModal() {
@@ -58,19 +56,19 @@ const REVIEW_API_URL = `${ BASE_API_URL }/review`;
         rating,
         text,
         product: DEFAULT_PRODUCT_SLUG,
-      })
+      });
 
       fetch(REVIEW_API_URL, {
         method: 'POST',
-        body
+        body,
       })
-        .then(response => response.json())
-        .then(({ data }) => {
-          const { review, averageRating } = data;
+        .then((response) => response.json())
+        .then(({data}) => {
+          const {review, averageRating} = data;
           updateProductRating(averageRating);
           addProductReview(review, true);
           closeReviewModal();
-        })
+        });
     }
 
     function populateProductDetails(product) {
@@ -82,7 +80,7 @@ const REVIEW_API_URL = `${ BASE_API_URL }/review`;
 
       product.reviews.forEach((review) => {
         addProductReview(review);
-      })
+      });
     }
 
     function updateProductRating(averageRating) {
@@ -102,15 +100,17 @@ const REVIEW_API_URL = `${ BASE_API_URL }/review`;
       const reviewStarsTemplate = getStarsTemplate(review.rating);
       template.find('.reviews__stars').append(reviewStarsTemplate);
 
-      prepend ? reviewsListEl.prepend(template) : reviewsListEl.append(template);
+      prepend
+        ? reviewsListEl.prepend(template)
+        : reviewsListEl.append(template);
     }
 
     function getStarsTemplate(rating) {
       const template = $('<div></div>');
       template.html(starsTemplate);
 
-      const width = rating / 5 * 100;
-      template.find('.stars__on').css('width', `${ width }%`)
+      const width = (rating / 5) * 100;
+      template.find('.stars__on').css('width', `${width}%`);
       return template;
     }
 
@@ -121,20 +121,23 @@ const REVIEW_API_URL = `${ BASE_API_URL }/review`;
         const ratingInput = stars.find('#form__rating');
 
         function updateRating(rating) {
-          const width = Number(rating) / 5 * 100;
-          starsOnEl.css('width', `${ width }%`);
+          const width = (Number(rating) / 5) * 100;
+          starsOnEl.css('width', `${width}%`);
         }
 
         let starsValue = 0;
 
         stars
           .find('.stars__btn')
-          .hover(function () {
-            updateRating($(this).data('rating'));
-          }, function () {
-            isHovering = false;
-            updateRating(starsValue);
-          })
+          .hover(
+            function () {
+              updateRating($(this).data('rating'));
+            },
+            function () {
+              isHovering = false;
+              updateRating(starsValue);
+            },
+          )
           .click(function () {
             starsValue = $(this).data('rating');
             formError.hide();
@@ -157,10 +160,10 @@ const REVIEW_API_URL = `${ BASE_API_URL }/review`;
 
     function loadDefaultProduct() {
       fetch(DEFAULT_PRODUCT_API_URL)
-        .then(response => response.json())
+        .then((response) => response.json())
         .then((data) => {
-          const { data: product } = data;
-          populateProductDetails(product)
+          const {data: product} = data;
+          populateProductDetails(product);
           loader.hide();
           app.show();
         });
@@ -169,6 +172,4 @@ const REVIEW_API_URL = `${ BASE_API_URL }/review`;
     loadDefaultProduct();
     setUpStars();
   });
-
-
 })(this);
